@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id = "eComForm">
+            <form id="eComForm">
+                <label id = "labelUberschrift" form="eComForm">E-Commerce Formular</label>
+
+                <div id = "NameStyle">
+                    <label for="Name">Name</label> 
+                    <input type="text" name="Name" id="Name" maxlength="50">
+                </div>
+
+                <div id = "PostleitzahlStyle">
+                    <label for="Postleitzahl">Postleitzahl</label>  
+                    <input type="text" name="Postleitzahl" id="Postleitzahl" maxlength="5">
+                </div>
+
+                <div id = "StadtStyle">
+                    <label for="Stadt">Stadt</label>  
+                    <input type="text" name="Stadt" id="Stadt" maxlength="40">
+                </div>
+
+                <div id = "StrasseStyle">
+                    <label for="Strasse">Strasse</label>  
+                    <input type="text" name="Strasse" id="Strasse" maxlength="40">
+                </div>
+
+                <div id = "HausnummerStyle">
+                    <label for="Hausnummer">Hausnummer</label>  
+                    <input type="text" name="Hausnummer" id="Hausnummer" maxlength="40">
+                </div>
+
+                <div id = "IBANStyle">
+                    <label for="IBAN">IBAN</label>  
+                    <input type="text" name="IBAN" id="IBAN" maxlength="40">
+                </div>
+
+                <div id = "GeldbetragStyle">
+                    <label for="Geldbetrag">Geldbetrag</label>  
+                    <input type="number" min="1" name="Geldbetrag" id="Geldbetrag" maxlength="40">
+                </div>
+
+                <button type="button" onclick="processForm();">Eingaben absenden</button>
+            </form>
+        </div>
+
+        <script src="functionality.js"></script>
+
+        <script>
+                    var name;
+                    var postleitzahl;
+                    var stadt;
+                    var strasse;
+                    var hausnummer;
+                    var iban;
+                    var geldbetrag;
+                    var createdDivs = [];
+
+                    function getData() {
+                        name = document.getElementById('Name').value;
+                        postleitzahl = document.getElementById('Postleitzahl').value;
+                        stadt = document.getElementById('Stadt').value;
+                        strasse = document.getElementById('Strasse').value;
+                        hausnummer = document.getElementById('Hausnummer').value;
+                        iban = document.getElementById('IBAN').value;
+                        geldbetrag = document.getElementById('Geldbetrag').value;
+                    }
+
+                    function processForm() {
+                        createdDivs.forEach(clearMsg);
+                        createdDivs = [];
+
+                        alert("Eingaben werden geprüft");
+
+                        getData();
+
+                        conName(name);
+                        conPostleitzahl(postleitzahl);
+                        conStadt(stadt);
+                        conStrasse(strasse);
+                        conHausnummer(hausnummer);
+                        conIBAN(iban);
+                        conGeldbetrag(geldbetrag);
+                    }
+
+                    function printDiv(divId, id) {
+                        var div = document.createElement('div');
+                        div.setAttribute('class', 'beneath');
+                        div.setAttribute('ID', id);
+                        document.getElementById(divId).appendChild(div);
+                        createdDivs.push(id);
+                    }
+
+                    function clearMsg(idToClear) {
+                        document.getElementById(idToClear).remove();
+                    }
+
+                    function writeMsg(loc, msg) {
+                        var label = document.createElement('label');
+                        label.innerHTML = msg + "<br>";
+                        document.getElementById(loc).appendChild(label);
+
+                    }
+
+
+
+        </script>
+
+
+    </body>
+</html>

@@ -1,0 +1,75 @@
+#eComForm {
+    width: 300px;
+    margin: auto;
+    font-size: 1em;
+    text-align: center;
+}
+
+#eComForm input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#NameStyle {
+    margin-bottom: 10px;
+}
+
+#PostleitzahlStyle {
+    margin-bottom: 10px;
+}
+
+#StadtStyle {
+    margin-bottom: 10px;
+}
+
+#StrasseStyle {
+    margin-bottom: 10px;
+}
+
+#HausnummerStyle {
+    margin-bottom: 10px;
+}
+
+#IBANStyle {
+    margin-bottom: 10px;
+}
+
+#GeldbetragStyle {
+    margin-bottom: 10px;
+}
+
+#resultNameStyle{
+
+}
+
+#resultPostleitzahlStyle {
+}
+
+#resultStadtStyle {
+}
+
+#resultStrasseStyle {
+}
+
+#resultHausnummerStyle {
+}
+
+#resultIBANStyle {
+}
+
+#resultGeldbetragStyle {
+}
+
+#labelUberschrift{
+    font-size: 2em;
+
+}
+
+.beneath{
+    border-style: solid;
+    border-color: red;
+    width: 280px;
+    height: 40px;
+    margin: auto;
+}
+
